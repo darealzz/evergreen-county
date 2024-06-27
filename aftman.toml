@@ -3,4 +3,5 @@
 [tools]
 rojo = "quenty/rojo@7.4.1-quenty-npm-canary.3"
 selene = "Kampfkarren/selene@0.26.1"
+stylua = "johnnymorganz/stylua@0.20.0"
 moonwave-extractor = "UpliftGames/moonwave@1.1.2"
