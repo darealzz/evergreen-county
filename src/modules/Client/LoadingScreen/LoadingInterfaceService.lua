@@ -47,11 +47,13 @@ function Service:ObserveUiVisible()
 end
 
 function Service:CallWhenSaveToEnableInterface(callback)
-	self._maid:GiveTask(self:ObserveUiVisible():Pipe({
-		Rx.where(function(value)
-			return value == false
-		end)
-	}):Subscribe(callback))
+	self._maid:GiveTask(self:ObserveUiVisible()
+		:Pipe({
+			Rx.where(function(value)
+				return value == false
+			end),
+		})
+		:Subscribe(callback))
 end
 
 function Service:_mountScreen()
@@ -70,34 +72,34 @@ function Service:_render()
 	self._maid:GiveTask(Blend.mount(LoadingFrame, {
 		Visible = true,
 
-		Blend.Find "Folder" {
+		Blend.Find("Folder")({
 			Name = "Content",
 
-			Blend.Find "ImageButton" {
+			Blend.Find("ImageButton")({
 				Name = "PlayButton",
 
-				[Blend.Tags] = 'UiButton',
+				[Blend.Tags] = "UiButton",
 
-				[Blend.OnEvent "MouseButton1Click"] = function()
+				[Blend.OnEvent("MouseButton1Click")] = function()
 					-- CAMERA MOVEMENT NEEDS TO STOP BEFORE ANYTHING ELSE
 					self._view:Hide()
-				end
-			},
+				end,
+			}),
 
-			Blend.Find "TextLabel" {
+			Blend.Find("TextLabel")({
 				Name = "PlayerName",
-				Text = "@" .. LocalPlayer.DisplayName
-			}
-		},
+				Text = "@" .. LocalPlayer.DisplayName,
+			}),
+		}),
 
-		Blend.Find "ImageLabel" {
+		Blend.Find("ImageLabel")({
 			Name = "CommunityLink",
 
-			Blend.Find "TextLabel" {
+			Blend.Find("TextLabel")({
 				Name = "TitleText",
-				Text = "Join our community @ discord.com/abcdefg"
-			}
-		}
+				Text = "Join our community @ discord.com/abcdefg",
+			}),
+		}),
 	}))
 
 	self:ObserveUiVisible():Subscribe(function(isVisible: boolean)
@@ -116,3 +118,4 @@ function Service:Destroy()
 end
 
 return Service
+

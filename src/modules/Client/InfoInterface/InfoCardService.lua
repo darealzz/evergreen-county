@@ -61,30 +61,30 @@ function Service:_render()
 	self._maid:GiveTask(Blend.mount(InfoCardFrame, {
 		Visible = true,
 
-		Blend.Find "ImageLabel" {
+		Blend.Find("ImageLabel")({
 			Name = "Card",
 
-			Blend.Find "TextLabel" {
+			Blend.Find("TextLabel")({
 				Name = "Username",
 				Text = LocalPlayer.DisplayName .. " (@" .. LocalPlayer.Name .. ")",
-			},
+			}),
 
-			Blend.Find "ImageButton" {
+			Blend.Find("ImageButton")({
 				Name = "CloseButton",
 
 				[Blend.Tags] = "UiButton",
 
-				[Blend.OnEvent "MouseButton1Click"] = function()
+				[Blend.OnEvent("MouseButton1Click")] = function()
 					self._view:Hide()
 				end,
-			}
-		},
+			}),
+		}),
 
-		Blend.Find "ImageButton" {
+		Blend.Find("ImageButton")({
 			Name = "ShowId",
 
 			[Blend.Tags] = "UiButton",
-		}
+		}),
 	}))
 
 	self._screen.Enabled = false
@@ -102,3 +102,4 @@ function Service:Destroy()
 end
 
 return Service
+

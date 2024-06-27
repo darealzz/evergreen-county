@@ -32,14 +32,15 @@ function Component.new(robloxInstance, serviceBag)
 end
 
 function Component:_render()
-	return Blend.New "ProximityPrompt" {
+	return Blend.New("ProximityPrompt")({
 		Name = "ATMPrompt",
 		Parent = self._obj,
 
 		[Blend.OnEvent("Triggered")] = function()
 			self._atmInterfaceService:ShowUi()
-		end
-	}
+		end,
+	})
 end
 
 return Binder.new("ATM", Component)
+

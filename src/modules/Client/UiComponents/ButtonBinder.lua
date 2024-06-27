@@ -39,7 +39,7 @@ function Component:_render(frame)
 					return 0.5
 				end
 				return self._defaultImageTransparency
-			end)
+			end),
 		}),
 
 		-- Size = self._buttonModel:ObserveIsPressed():Pipe({
@@ -57,3 +57,4 @@ function Component:_render(frame)
 end
 
 return Binder.new("UiButton", Component)
+

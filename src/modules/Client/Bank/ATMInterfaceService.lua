@@ -57,24 +57,24 @@ function Service:_render()
 	self._maid:GiveTask(Blend.mount(AtmFrame, {
 		Visible = true,
 
-		Blend.Find "ImageLabel" {
+		Blend.Find("ImageLabel")({
 			Name = "Content",
 
-			Blend.Find "ImageButton" {
+			Blend.Find("ImageButton")({
 				Name = "Transact",
 				[Blend.Tags] = "UiButton",
-			},
+			}),
 
-			Blend.Find "ImageButton" {
+			Blend.Find("ImageButton")({
 				Name = "CloseButton",
 
 				[Blend.Tags] = "UiButton",
 
-				[Blend.OnEvent "MouseButton1Click"] = function()
+				[Blend.OnEvent("MouseButton1Click")] = function()
 					self._view:Hide()
 				end,
-			}
-		}
+			}),
+		}),
 	}))
 
 	self._screen.Enabled = false
@@ -92,3 +92,4 @@ function Service:Destroy()
 end
 
 return Service
+
