@@ -8,4 +8,3 @@ local serviceBag = require("ServiceBag").new()
 serviceBag:GetService(require("EvergreenServiceClient"))
 serviceBag:Init()
 serviceBag:Start()
-

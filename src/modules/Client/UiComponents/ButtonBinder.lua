@@ -22,15 +22,6 @@ function Component.new(robloxInstance: ImageButton)
 	return self
 end
 
--- function Component:_transformScaleByPercent(scale: UDim2, percent: number): UDim2
--- 	percent = percent - 100
--- 	return UDim2.fromScale(
--- 		(self._defaultFrameSize.X.Scale / 100) * percent,
--- 		(self._defaultFrameSize.Y.Scale / 100) * percent
--- 	)
---
--- end
-
 function Component:_render(frame)
 	Blend.mount(frame, {
 		ImageTransparency = self._buttonModel:ObserveIsMouseOrTouchOver():Pipe({
@@ -41,16 +32,6 @@ function Component:_render(frame)
 				return self._defaultImageTransparency
 			end),
 		}),
-
-		-- Size = self._buttonModel:ObserveIsPressed():Pipe({
-		-- 	Rx.map(function(isPressed: boolean)
-		-- 		if isPressed then
-		-- 			return self:_transformScaleByPercent(self._defaultFrameSize, 1)
-		-- 		end
-		--
-		-- 		return self._defaultFrameSize
-		-- 	end)
-		-- })
 	})
 
 	return frame

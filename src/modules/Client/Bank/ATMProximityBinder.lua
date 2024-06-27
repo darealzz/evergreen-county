@@ -43,4 +43,3 @@ function Component:_render()
 end
 
 return Binder.new("ATM", Component)
-
