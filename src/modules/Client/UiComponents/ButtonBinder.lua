@@ -9,7 +9,7 @@ local ButtonHighlightModel = require("ButtonHighlightModel")
 local Component = setmetatable({}, BaseObject)
 Component.__index = Component
 
-function Component.new(robloxInstance: ImageButton, serviceBag)
+function Component.new(robloxInstance: ImageButton)
 	local self = setmetatable(BaseObject.new(robloxInstance), Component)
 
 	self._buttonModel = self._maid:Add(ButtonHighlightModel.new())
@@ -57,4 +57,3 @@ function Component:_render(frame)
 end
 
 return Binder.new("UiButton", Component)
-
