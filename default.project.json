@@ -1,0 +1,28 @@
+{
+  "name": "Evergreen",
+  "globIgnorePaths": [ "**/.package-lock.json" ],
+  "tree": {
+    "$className": "DataModel",
+    "ServerScriptService": {
+      "Evergreen": {
+        "$className": "Folder",
+        "game": {
+          "$path": "src/modules"
+        },
+        "node_modules": {
+          "$path": "node_modules"
+        }
+      },
+      "EvergreenScripts": {
+        "$path": "src/scripts/Server"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "EvergreenScripts": {
+          "$path": "src/scripts/Client"
+        }
+      }
+    }
+  }
+}

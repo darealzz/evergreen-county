@@ -1,0 +1,24 @@
+{
+  "name": "evergreen",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "Roblox",
+    "Nevermore",
+    "Lua"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@quenty/basicpane": "^13.3.0",
+    "@quenty/binder": "^14.4.0",
+    "@quenty/buttonhighlightmodel": "^14.3.0",
+    "@quenty/clienttranslator": "^14.4.0",
+    "@quenty/cmdrservice": "^13.5.0",
+    "@quenty/genericscreenguiprovider": "^13.5.0",
+    "@quenty/loader": "^10.3.0",
+    "@quenty/servicebag": "^11.4.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
