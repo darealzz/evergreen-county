@@ -19,4 +19,3 @@ function EvergreenService:Init(serviceBag)
 end
 
 return EvergreenService
-

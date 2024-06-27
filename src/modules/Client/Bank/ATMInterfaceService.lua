@@ -11,7 +11,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local EvergreenScreenProvider = require("EvergreenScreenProvider")
 local LoadingInterfaceService = require("LoadingInterfaceService")
 
-local ScreenGuiService = require("ScreenGuiService")
 local BasicPane = require("BasicPane")
 local Blend = require("Blend")
 local Maid = require("Maid")
@@ -92,4 +91,3 @@ function Service:Destroy()
 end
 
 return Service
-

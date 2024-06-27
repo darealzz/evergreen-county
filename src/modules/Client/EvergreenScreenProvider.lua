@@ -7,4 +7,3 @@ return GenericScreenGuiProvider.new({
 	INFO_CARD = 50,
 	ATM_INTERFACE = 100,
 })
-

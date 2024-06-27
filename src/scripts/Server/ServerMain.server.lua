@@ -10,4 +10,3 @@ local serviceBag = require("ServiceBag").new()
 serviceBag:GetService(require("EvergreenService"))
 serviceBag:Init()
 serviceBag:Start()
-

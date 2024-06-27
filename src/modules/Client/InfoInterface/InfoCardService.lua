@@ -12,11 +12,9 @@ local Players = game:GetService("Players")
 local EvergreenScreenProvider = require("EvergreenScreenProvider")
 local LoadingInterfaceService = require("LoadingInterfaceService")
 
-local ScreenGuiService = require("ScreenGuiService")
 local BasicPane = require("BasicPane")
 local Blend = require("Blend")
 local Maid = require("Maid")
-local Rx = require("Rx")
 
 local InfoCardFrame = ReplicatedStorage.InterfaceToMount.Game.InfoCard
 local LocalPlayer = Players.LocalPlayer
@@ -102,4 +100,3 @@ function Service:Destroy()
 end
 
 return Service
-
