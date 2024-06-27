@@ -37,6 +37,5 @@ jobs:
       - name: Setup stylua
         uses: JohnnyMorganz/stylua-action@v4
         with:
-          version: 'v4.0.0'
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --check .
