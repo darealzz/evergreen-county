@@ -12,6 +12,7 @@ local Players = game:GetService("Players")
 local EvergreenScreenProvider = require("EvergreenScreenProvider")
 
 local BasicPane = require("BasicPane")
+local Promise = require("Promise")
 local Blend = require("Blend")
 local Maid = require("Maid")
 local Rx = require("Rx")
@@ -28,6 +29,7 @@ function Service:Init(serviceBag)
 	self._evergreenScreenProvider = serviceBag:GetService(EvergreenScreenProvider)
 	self._maid = Maid.new()
 	self._view = BasicPane.new()
+	self._screenOver = self._maid:Add(Promise.new())
 
 	--[=[
 	When init is called, public observe function can't be accessed.
@@ -46,14 +48,8 @@ function Service:ObserveUiVisible()
 	return self._view:ObserveVisible()
 end
 
-function Service:CallWhenSaveToEnableInterface(callback)
-	self._maid:GiveTask(self:ObserveUiVisible()
-		:Pipe({
-			Rx.where(function(value)
-				return value == false
-			end),
-		})
-		:Subscribe(callback))
+function Service:PromiseScreenOver()
+	return self._screenOver
 end
 
 function Service:_mountScreen()
@@ -83,6 +79,7 @@ function Service:_render()
 				[Blend.OnEvent("MouseButton1Click")] = function()
 					-- CAMERA MOVEMENT NEEDS TO STOP BEFORE ANYTHING ELSE
 					self._view:Hide()
+					self._screenOver:Resolve()
 				end,
 			}),
 

@@ -86,7 +86,7 @@ function Service:_render()
 	}))
 
 	self._screen.Enabled = false
-	self._loadingInterfaceService:CallWhenSaveToEnableInterface(function()
+	self._loadingInterfaceService:PromiseScreenOver():Then(function()
 		self:ObserveUiVisible():Subscribe(function(isVisible: boolean)
 			self._screen.Enabled = isVisible
 		end)

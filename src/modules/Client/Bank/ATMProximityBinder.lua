@@ -21,7 +21,7 @@ function Component.new(robloxInstance, serviceBag)
 		self.Gui = Gui
 
 		self.Gui.Enabled = false
-		self._loadingInterfaceService:CallWhenSaveToEnableInterface(function()
+		self._loadingInterfaceService:PromiseScreenOver():Then(function()
 			self._atmInterfaceService:ObserveUiVisible():Subscribe(function(isVisible: boolean)
 				self.Gui.Enabled = not isVisible
 			end)
